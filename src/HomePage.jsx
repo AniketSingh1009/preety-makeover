@@ -65,6 +65,7 @@ const PreetyMakeover = () => {
     { date: 'July', booked: false },
   
   ];
+  
 
   useEffect(() => {
     const photoInterval = setInterval(() => {
@@ -127,6 +128,7 @@ const PreetyMakeover = () => {
 
       {/* Photo and Video Gallery */}
       {/* Photo and Video Gallery */}
+{/* Photo and Video Gallery */}
 <section id="gallery" className="py-12 bg-gradient-to-r from-purple-100 to-pink-100">
   <div className="container mx-auto px-4">
     <h2 className="text-3xl font-bold mb-6 text-center text-purple-800">Our Previous Works</h2>
@@ -137,14 +139,17 @@ const PreetyMakeover = () => {
       spaceBetween={30}
       slidesPerView={1}
     >
-      {photos.map((photo, index) => (
+      {services.map((service, index) => (
         <SwiperSlide key={index}>
-          <div className="w-full h-[60vh] overflow-hidden flex justify-center items-center">
+          <div className="w-full h-[60vh] overflow-hidden flex flex-col justify-center items-center">
             <img
-              src={photo}
-              alt={`Makeup example ${index + 1}`}
-              className="object-contain w-full h-full" // Ensures the whole image fits
+              src={service.image}
+              alt={service.type}
+              className="object-contain w-full h-full mb-4" // Ensures the whole image fits
             />
+            <h3 className="text-2xl font-semibold text-purple-700">{service.type}</h3>
+            <p className="text-xl font-bold text-pink-600">{service.price}</p>
+            <p className="text-gray-600 mt-2">{service.description}</p>
           </div>
         </SwiperSlide>
       ))}
@@ -154,21 +159,24 @@ const PreetyMakeover = () => {
 
 
 
+
       {/* Products Used */}
       <section id="products" className="py-12">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold mb-6 text-center text-purple-800">Products We Use</h2>
-          <div className="flex flex-col items-center text-xl font-bold ">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {products.map((product, index) => (
-              <a
-                key={index}
-                href={product.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-purple-700 hover:text-purple-500 mb-2"
-              >
-                {product.brand}
-              </a>
+              <div key={index} className="bg-white rounded-lg shadow-lg p-4 flex flex-col items-center">
+                <h3 className="text-xl font-semibold text-purple-700">{product.brand}</h3>
+                <a
+                  href={product.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-pink-500 mt-2 hover:underline"
+                >
+                  Buy Now
+                </a>
+              </div>
             ))}
           </div>
         </div>
@@ -195,55 +203,44 @@ const PreetyMakeover = () => {
         </div>
       </section>
 
-      {/* Upcoming Booking Dates */}
+      {/* Bookings Section */}
       <section id="bookings" className="py-12">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-6 text-center text-purple-800">Upcoming Bookings</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <h2 className="text-3xl font-bold mb-6 text-center text-purple-800">Available Bookings</h2>
+          <ul className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
             {bookings.map((booking, index) => (
-              <div key={index} className="bg-white p-6 rounded-lg shadow-lg">
-                <div className="text-center">
-                  <h3 className="text-xl font-bold mb-2 text-purple-700">{booking.date}</h3>
-                  <p className={`text-lg font-semibold ${booking.booked ? 'text-red-500' : 'text-green-500'}`}>
-                    {booking.booked ? 'Fully Booked' : 'Available'}
-                  </p>
-                </div>
-              </div>
+              <li key={index} className={`p-4 text-center border rounded-lg ${booking.booked ? 'bg-red-200' : 'bg-green-200'}`}>
+                <span className="font-bold">{booking.date}</span>
+                <span className={`block ${booking.booked ? 'text-red-600' : 'text-green-600'}`}>
+                  {booking.booked ? 'Booked' : 'Available'}
+                </span>
+              </li>
             ))}
-          </div>
+          </ul>
         </div>
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-12 bg-gradient-to-b from-purple-200 to-pink-200">
+      <section id="contact" className="py-12 bg-gradient-to-r from-purple-100 to-pink-100">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold mb-6 text-purple-800">Contact Us</h2>
+          <h2 className="text-3xl font-bold mb-6 text-purple-800">Get in Touch</h2>
+          <p className="mb-4 text-gray-700">
+            For any inquiries or to book our services, feel free to contact us on our social media platforms!
+          </p>
           <div className="flex justify-center space-x-4">
-            <a
-              href="https://www.instagram.com/preetty1710?igsh=Z29zdXI4cmwzNWNh"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-pink-500 hover:text-pink-600 text-4xl"
-            >
-              <FaInstagram />
+            <a href="https://www.instagram.com/preetymakeover/" target="_blank" rel="noopener noreferrer">
+              <FaInstagram className="text-3xl text-purple-700 hover:text-purple-500" />
             </a>
-            <a
-              href="https://wa.me/message/Z4XHJBSZ2LW4K1"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-green-500 hover:text-green-600 text-4xl"
-            >
-              <FaWhatsapp />
+            <a href="https://wa.me/message/Z4XHJBSZ2LW4K1" target="_blank" rel="noopener noreferrer">
+              <FaWhatsapp className="text-3xl text-green-600 hover:text-green-400" />
             </a>
           </div>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="bg-purple-800 text-white py-4">
-        <div className="container mx-auto px-4 text-center">
-          &copy; 2023 Preety Makeover. All rights reserved.
-        </div>
+      <footer className="py-4 bg-gradient-to-r from-pink-500 to-purple-600 text-white text-center">
+        <p>&copy; 2024 Preety Makeover. All Rights Reserved.</p>
       </footer>
     </div>
   );

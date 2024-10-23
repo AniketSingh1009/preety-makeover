@@ -1,9 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { FaInstagram, FaWhatsapp } from 'react-icons/fa';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation } from 'swiper/modules'; // Updated import for Navigation
-import 'swiper/swiper-bundle.css';
-
 const PreetyMakeover = () => {
   const [serviceIndex, setServiceIndex] = useState(0);
   const [galleryIndex, setGalleryIndex] = useState(0);

@@ -6,6 +6,7 @@ import 'swiper/swiper-bundle.css';
 
 const PreetyMakeover = () => {
   const [serviceIndex, setServiceIndex] = useState(0);
+  const [galleryIndex, setGalleryIndex] = useState(0);
 
   const photos = [
     //add the link from the public folder
@@ -76,9 +77,16 @@ const PreetyMakeover = () => {
       clearInterval(photoInterval);
     };
   }, []);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setGalleryIndex((prevIndex) => (prevIndex + 1) % photos.length);
+    }, 2000); // Change image every 2 seconds
+
+    return () => clearInterval(interval); // Cleanup on unmount
+  }, [photos.length]);
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-pink-100 to-purple-200">
+    <div className="min-h-screen bg-gradient-to-b from-pink-100 to-purple-200 size-full">
       {/* Navbar */}
       <nav className="bg-gradient-to-r from-pink-500 to-purple-600 text-white p-4 sticky top-0 z-10">
         <div className="container mx-auto flex justify-between items-center">
@@ -102,66 +110,61 @@ const PreetyMakeover = () => {
       </nav>
 
       {/* About Section */}
-      <section id="about" className="py-12">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-col items-center gap-8">
-            <div className="text-center">
-              <h2 className="text-3xl font-bold mb-4 from-pink-500 text-purple-800">About Preety Makeover</h2>
-              <p className="mb-4 text-gray-700">
-                Preety Makeover is your go-to destination for stunning makeup transformations. With years of experience and a passion for beauty, we specialize in bringing out your inner radiance for any occasion.
-              </p>
-              <p className="mb-6 text-gray-700">
-                From bridal makeup to glamorous party looks, we use high-quality products and cutting-edge techniques to ensure you look and feel your absolute best.
-              </p>
-              <a
+      <section id="about" className="py-12 bg-white">
+  <div className="max-w-4xl mx-auto px-4">
+  <div className="flex flex-col items-center gap-8">
+  <div className="text-center">
+    <h2 className="text-3xl font-bold mb-6 text-purple-800 text-center">About Us</h2>
+    <p className="text-lg mb-4 text-gray-600 text-center">
+      At Preety Makeover, we believe that beauty is not just about looks; it's about feeling confident and empowered. Our dedicated team of professionals is passionate about enhancing your natural beauty while providing exceptional service.
+    </p>
+    <p className="text-lg mb-4 text-gray-600 text-center">
+      With years of experience in the beauty industry, we offer a wide range of services tailored to meet your unique needs. From bridal makeovers to everyday glam, our goal is to make you feel special on every occasion.
+    </p>
+    <p className="text-lg mb-4 text-gray-600 text-center">
+      Our philosophy centers around using high-quality products and techniques to ensure that you receive the best possible results.
+    </p>
+    <p className="text-lg mb-4 text-gray-600 text-center">
+      Join us at Preety Makeover, and let us help you discover the beauty within. Whether it’s a special occasion or a desire for a new look, we are here to support you every step of the way.
+    </p>
+    <p className="text-lg mb-4 text-gray-600 text-center">
+      Thank you for considering Preety Makeover as your beauty partner. We can’t wait to help you shine!
+    </p>
+    <a
                 href="https://wa.me/message/Z4XHJBSZ2LW4K1"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-gradient-to-r from-pink-500 to-purple-600 text-white px-6 py-2 rounded-full text-xl "
+                className="bg-gradient-to-r from-pink-500 to-purple-600 text-white px-6 py-2 rounded-full text-xl  allign-items-center"
               >
                 Book Now 
               </a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Photo and Video Gallery */}
-      {/* Photo and Video Gallery */}
-{/* Photo and Video Gallery */}
-<section id="gallery" className="py-12 bg-gradient-to-r from-purple-100 to-pink-100">
-  <div className="container mx-auto px-4">
-    <h2 className="text-3xl font-bold mb-6 text-center text-purple-800">Our Previous Works</h2>
-    <Swiper
-      navigation
-      modules={[Navigation]}
-      className="mySwiper"
-      spaceBetween={30}
-      slidesPerView={1}
-    >
-      {services.map((service, index) => (
-        <SwiperSlide key={index}>
-          <div className="w-full h-[60vh] overflow-hidden flex flex-col justify-center items-center">
-            <img
-              src={service.image}
-              alt={service.type}
-              className="object-contain w-full h-full mb-4" // Ensures the whole image fits
-            />
-            <h3 className="text-2xl font-semibold text-purple-700">{service.type}</h3>
-            <p className="text-xl font-bold text-pink-600">{service.price}</p>
-            <p className="text-gray-600 mt-2">{service.description}</p>
-          </div>
-        </SwiperSlide>
-      ))}
-    </Swiper>
+  </div>
+  </div>
   </div>
 </section>
+
+      
+
+      {/* Photo and Video Gallery */}
+      <section id="gallery" className="py-12 bg-gradient-to-r from-purple-100 to-pink-100 flex items-center justify-center"> {/* Centered Flexbox */}
+        <div className="max-w-4xl w-full px-4 flex flex-col items-center"> {/* Centered flex container */}
+          <h2 className="text-3xl font-bold mb-6 text-center text-purple-800">Our Previous Works</h2>
+          <div className="relative w-[60vh] h-[70vh] mb-4"> {/* Set to fixed height */}
+            <img
+              src={photos[galleryIndex]}
+              alt={`Gallery Image ${galleryIndex + 1}`}
+              className="object-cover w-full h-full rounded-lg" // Ensure image covers the container
+            />
+          </div>
+          {/* <p className="text-lg text-center text-gray-600">Image {galleryIndex + 1} of {photos.length}</p> */}
+        </div>
+      </section>
 
 
 
 
       {/* Products Used */}
-      <section id="products" className="py-12">
+      <section id="products" className="py-20">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold mb-6 text-center text-purple-800">Products We Use</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">

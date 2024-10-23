@@ -231,7 +231,7 @@ const PreetyMakeover = () => {
             For any inquiries or to book our services, feel free to contact us on our social media platforms!
           </p>
           <div className="flex justify-center space-x-4">
-            <a href="https://www.instagram.com/preetymakeover/" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.instagram.com/preetty1710?igsh=Z29zdXI4cmwzNWNh" target="_blank" rel="noopener noreferrer">
               <FaInstagram className="text-3xl text-purple-700 hover:text-purple-500" />
             </a>
             <a href="https://wa.me/message/Z4XHJBSZ2LW4K1" target="_blank" rel="noopener noreferrer">

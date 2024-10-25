@@ -7,29 +7,29 @@ const PreetyMakeover = () => {
   const photos = [
     //add the link from the public folder
     
-'./assets/b25.jpg?height=600&width=600',
-'./assets/b6.jpg?height=600&width=600',
-'./assets/b9.jpg?height=600&width=600',
-'./assets/b10.jpg?height=600&width=600',
-'./assets/b1.jpg?height=600&width=600',
-'./assets/b2.jpg?height=400&width=600',
-'./assets/b3.jpg?height=400&width=600',
-'./assets/b4.jpg?height=400&width=600',
-'./assets/b5.jpg?height=400&width=600',
-'./assets/b9.jpg?height=400&width=600',
-'./assets/b10.jpg?height=400&width=600',
-'./assets/b12.jpg?height=400&width=600',
-'./assets/b13.jpg?height=400&width=600',
-'./assets/b14.jpg?height=400&width=600',
-'./assets/b16.jpg?height=400&width=600',
-'./assets/b17.jpg?height=400&width=600',
-'./assets/b18.jpg?height=400&width=600',
-'./assets/b19.jpg?height=400&width=600',
-'./assets/b20.jpg?height=400&width=600',
-'./assets/b21.jpg?height=400&width=600',
-'./assets/b24.jpg?height=400&width=600',
-'./assets/b25.jpg?height=400&width=600',
-'./assets/b5.jpg?height=400&width=600',
+'/b25.jpg?height=600&width=600',
+'/b6.jpg?height=600&width=600',
+'/b9.jpg?height=600&width=600',
+'/b10.jpg?height=600&width=600',
+'/b1.jpg?height=600&width=600',
+'/b2.jpg?height=400&width=600',
+'/b3.jpg?height=400&width=600',
+'/b4.jpg?height=400&width=600',
+'/b5.jpg?height=400&width=600',
+'/b9.jpg?height=400&width=600',
+'/b10.jpg?height=400&width=600',
+'/b12.jpg?height=400&width=600',
+'/b13.jpg?height=400&width=600',
+'/b14.jpg?height=400&width=600',
+'/b16.jpg?height=400&width=600',
+'/b17.jpg?height=400&width=600',
+'/b18.jpg?height=400&width=600',
+'/b19.jpg?height=400&width=600',
+'/b20.jpg?height=400&width=600',
+'/b21.jpg?height=400&width=600',
+'/b24.jpg?height=400&width=600',
+'/b25.jpg?height=400&width=600',
+'/b5.jpg?height=400&width=600',
 
   ];
 
@@ -43,11 +43,11 @@ const PreetyMakeover = () => {
   ];
 
   const services = [
-    { type: ' HD Bridal Makeup', price: 'Rs 10000', description: 'Complete bridal look with touch-ups', image: '../public/b25.jpg?height=200&width=300' },
-    { type: 'Party Makeup', price: 'Rs 3500', description: 'Glamorous look for special events', image: '../public/b16.jpg?height=200&width=300' },
-    { type: 'Airbrush  Makeup', price: 'Rs 15000', description: 'Enhance your natural beauty', image: '../public/t1.jpeg?height=200&width=300' },
-    { type: ' Premium Makeup', price: 'Rs 20000', description: 'Camera-ready looks for all types of shoots', image: '../public/t2.jpeg?height=200&width=300' },
-    { type: ' All type Makeup', price: 'Rs 3500-30000', description: 'All types of group or solo makeup', image: '../public/b6.jpg?height=200&width=300' },
+    { type: ' HD Bridal Makeup', price: 'Rs 10000', description: 'Complete bridal look with touch-ups', image: '/b25.jpg?height=200&width=300' },
+    { type: 'Party Makeup', price: 'Rs 3500', description: 'Glamorous look for special events', image: '/b16.jpg?height=200&width=300' },
+    { type: 'Airbrush  Makeup', price: 'Rs 15000', description: 'Enhance your natural beauty', image: '/t1.jpeg?height=200&width=300' },
+    { type: ' Premium Makeup', price: 'Rs 20000', description: 'Camera-ready looks for all types of shoots', image: '/t2.jpeg?height=200&width=300' },
+    { type: ' All type Makeup', price: 'Rs 3500-30000', description: 'All types of group or solo makeup', image: '/b6.jpg?height=200&width=300' },
   
   ];
 
@@ -89,7 +89,7 @@ const PreetyMakeover = () => {
         <div className="container mx-auto flex justify-between items-center">
           <div className="flex items-center space-x-2">
             <img
-              src="./assets/logo.jpg?height=40&width=40"
+              src="/logo.jpg?height=40&width=40"
               alt="Preety Makeover Logo"
               className="rounded-full w-10 h-10"
             />

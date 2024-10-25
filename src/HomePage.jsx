@@ -6,29 +6,30 @@ const PreetyMakeover = () => {
 
   const photos = [
     //add the link from the public folder
-'../public/b25.jpg?height=600&width=600',
-'../public/b6.jpg?height=600&width=600',
-'../public/b9.jpg?height=600&width=600',
-'../public/b10.jpg?height=600&width=600',
-'../public/b1.jpg?height=600&width=600',
-'../public/b2.jpg?height=400&width=600',
-'../public/b3.jpg?height=400&width=600',
-'../public/b4.jpg?height=400&width=600',
-'../public/b5.jpg?height=400&width=600',
-'../public/b9.jpg?height=400&width=600',
-'../public/b10.jpg?height=400&width=600',
-'../public/b12.jpg?height=400&width=600',
-'../public/b13.jpg?height=400&width=600',
-'../public/b14.jpg?height=400&width=600',
-'../public/b16.jpg?height=400&width=600',
-'../public/b17.jpg?height=400&width=600',
-'../public/b18.jpg?height=400&width=600',
-'../public/b19.jpg?height=400&width=600',
-'../public/b20.jpg?height=400&width=600',
-'../public/b21.jpg?height=400&width=600',
-'../public/b24.jpg?height=400&width=600',
-'../public/b25.jpg?height=400&width=600',
-'../public/b5.jpg?height=400&width=600',
+    
+'./assets/b25.jpg?height=600&width=600',
+'./assets/b6.jpg?height=600&width=600',
+'./assets/b9.jpg?height=600&width=600',
+'./assets/b10.jpg?height=600&width=600',
+'./assets/b1.jpg?height=600&width=600',
+'./assets/b2.jpg?height=400&width=600',
+'./assets/b3.jpg?height=400&width=600',
+'./assets/b4.jpg?height=400&width=600',
+'./assets/b5.jpg?height=400&width=600',
+'./assets/b9.jpg?height=400&width=600',
+'./assets/b10.jpg?height=400&width=600',
+'./assets/b12.jpg?height=400&width=600',
+'./assets/b13.jpg?height=400&width=600',
+'./assets/b14.jpg?height=400&width=600',
+'./assets/b16.jpg?height=400&width=600',
+'./assets/b17.jpg?height=400&width=600',
+'./assets/b18.jpg?height=400&width=600',
+'./assets/b19.jpg?height=400&width=600',
+'./assets/b20.jpg?height=400&width=600',
+'./assets/b21.jpg?height=400&width=600',
+'./assets/b24.jpg?height=400&width=600',
+'./assets/b25.jpg?height=400&width=600',
+'./assets/b5.jpg?height=400&width=600',
 
   ];
 
@@ -88,7 +89,7 @@ const PreetyMakeover = () => {
         <div className="container mx-auto flex justify-between items-center">
           <div className="flex items-center space-x-2">
             <img
-              src="../public/logo.jpg?height=40&width=40"
+              src="./assets/logo.jpg?height=40&width=40"
               alt="Preety Makeover Logo"
               className="rounded-full w-10 h-10"
             />
